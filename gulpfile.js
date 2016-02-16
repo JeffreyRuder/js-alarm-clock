@@ -6,12 +6,12 @@ var uglify = require('gulp-uglify');
 var utilities = require('gulp-util');
 var del = require('del');
 var browserSync = require('browser-sync').create();
-var lib = require('bower-files')({
+var lib = require('bower-files') ({
   "overrides": {
     "bootstrap": {
       "main": [
         "less/bootstrap.less",
-        "dist/css/bootstrap",
+        "dist/css/bootstrap.css",
         "dist/css/bootstrap.js"
       ]
     }
@@ -77,6 +77,8 @@ gulp.task("serve", function() {
 
   gulp.watch(['js/*.js'], ['jsBuild']);
   gulp.watch(['bower.json'], ['bowerBuild']);
+  gulp.watch(['css/styles.css'], ['bowerBuild']);
+  gulp.watch(['index.html'], ['bowerBuild']);
 });
 
 gulp.task('jsBuild', ['jsBrowserify'], function() {
