@@ -65,6 +65,8 @@ gulp.task("build", ["clean"], function() {
     gulp.start("jsBrowserify");
   }
   gulp.start('bower');
+  return gulp.src("./css/styles.css")
+    .pipe(gulp.dest("./build/css"));
 });
 
 gulp.task("serve", function() {
