@@ -1,5 +1,5 @@
 {
-  "name": "app-name",
+  "name": "alarm-clock",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,5 +20,8 @@
     "gulp-util": "^3.0.7",
     "mocha": "^2.4.5",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "moment": "^2.11.2"
   }
 }
