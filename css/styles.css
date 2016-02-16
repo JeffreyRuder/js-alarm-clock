@@ -3,6 +3,28 @@ body {
   color: white;
 }
 
+.alarm-color {
+  animation-name: animation;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@-webkit-keyframes animation {
+    0%      {background-color:#666;}
+    33.0%   {background-color:#f6ca93;}
+    66.0%   {background-color: #fff;}
+    100.0%  {background-color:#666;}
+}
+
+@keyframes animation {
+    0%      {background-color:#666;}
+    33.0%   {background-color:#f6ca93;}
+    66.0%   {background-color: #fff;}
+    100.0%  {background-color:#666;}
+}
+
 input {
   color: black;
 }

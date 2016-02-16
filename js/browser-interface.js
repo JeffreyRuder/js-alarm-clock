@@ -24,8 +24,12 @@ $(function() {
       .on("finish.countdown", function() {
         $(".alarm-on").show();
         $("#" + alarmName).remove();
+        $("#name").append(alarmName);
+        $("body").addClass("alarm-color");
         setTimeout(function() {
           $(".alarm-on").hide();
+          $("#name").empty();
+          $("body").removeClass("alarm-color");
         }, 30000);
       });
     $(".active-alarms").append("<p id='" + alarmName + "'>" + alarmName + " - " + (alarmTime.format('LL') + " " + alarmTime.format('LT')) + "</p>");
