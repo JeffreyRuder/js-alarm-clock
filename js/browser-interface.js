@@ -20,7 +20,9 @@ $(function() {
     var timeString = $("#alarm-date").val() + " " + $("#alarm-time").val();
     var alarmTime = moment(timeString);
 
-    $(".alarm").countdown(alarmTime.valueOf())
+    $(".active-alarms").append("<p id='" + alarmName + "'>" + alarmName + " - " + (alarmTime.format('LL') + " " + alarmTime.format('LT')) + "</p>");
+
+    $("#" + alarmName).countdown(alarmTime.valueOf())
       .on("finish.countdown", function() {
         $(".alarm-on").show();
         $("#" + alarmName).remove();
@@ -32,7 +34,7 @@ $(function() {
           $("body").removeClass("alarm-color");
         }, 30000);
       });
-    $(".active-alarms").append("<p id='" + alarmName + "'>" + alarmName + " - " + (alarmTime.format('LL') + " " + alarmTime.format('LT')) + "</p>");
+
 
   });
 });
